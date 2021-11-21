@@ -1,0 +1,22 @@
+type BasketballPlayer {
+    id: ID!,
+    name: String,
+    surName: String,
+    position: String,
+    createAt: String
+}
+
+input PlayersDto {
+    name: String!,
+    surName: String,
+    position: String!
+}
+
+type Query {
+    getAllPlayers:[BasketballPlayer]
+}
+
+type Mutation {
+    saveBasketballPlayer(basketballPlayer: PlayersDto):BasketballPlayer
+    deleteBasketballPlayer(id: ID):ID
+}
